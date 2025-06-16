@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>말 암기 게임!</title>
+    <title>영어 지문 암기 게임!</title>
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -31,7 +31,7 @@
             overflow: hidden;
         }
         .container::before {
-            content: '🐴✨';
+            content: '🌟📚';
             position: absolute;
             top: -15px;
             left: -15px;
@@ -40,7 +40,7 @@
             transform: rotate(-20deg);
         }
         .container::after {
-            content: '🦄💖';
+            content: '✏️💡';
             position: absolute;
             bottom: -15px;
             right: -15px;
@@ -202,7 +202,6 @@
         }
         .extra-word { /* 사용자가 추가한 단어 */
             color: #4b0082; /* 진한 보라색 */
-            font-color: white;
             background-color: #e6e6fa; /* 연한 보라 */
             padding: 2px 4px;
             border-radius: 3px;
@@ -226,7 +225,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>💖 말 암기 게임 💖</h1>
+        <h1>💖 영어 지문 암기 게임 💖</h1>
         <div class="score-display">총점: <span id="totalScore">0</span>점</div>
         <div class="round-info" id="roundInfo"></div>
 
@@ -263,29 +262,122 @@
 
     <script>
         const sentences = [
+            // 1번 지문
             {
-                korean: "당신은 말에 대해 얼마나 잘 알고 있나요?",
-                english: "How well do you know about horses?"
+                korean: "안녕, 데이비드. 어디 가니?",
+                english: "Hey, David. Where are you going?"
             },
             {
-                korean: "사진을 보고, 말의 머리, 귀, 그리고 눈에 주의를 기울여 보세요.",
-                english: "Look at the picture, and pay attention to the horse's head, ears, and eyes."
+                korean: "하이, 엠마. 나는 시내 공원에 갈 거야.",
+                english: "Hi, Emma. I'm going to the city park."
             },
             {
-                korean: "말의 머리는 위로 들려 있고, 귀는 다른 방향으로 향해 있습니다.",
-                english: "Its head is up, and its ears are in different directions."
+                korean: "오, 자전거 타러 갈 거니?",
+                english: "Oh, are you going to ride a bike there?"
             },
             {
-                korean: "눈은 흰자위가 보일 정도로 크게 떠져 있습니다.",
-                english: "The eyes are open wide so that you can see the whites of its eyes."
+                korean: "아니. 공원 사진을 그릴 거야. 나는 학교 신문에 그것이 필요해.",
+                english: "No. I'll draw a picture of the park. I need it for the school newspaper."
             },
             {
-                korean: "이것은 말이 무언가에 겁을 먹었다는 것을 보여줍니다.",
-                english: "This shows the horse is scared of something."
+                korean: "알겠어. 멋진 그림을 그리기 바라.",
+                english: "I see. I hope you draw a nice picture."
+            },
+            // 2번 지문
+            {
+                korean: "잭, 이번이 내 첫 야구 경기야!",
+                english: "Jack, this is my first time at a baseball game!"
             },
             {
-                korean: "그런 말을 보면, 더 이상 겁주지 않도록 조심하세요.",
-                english: "When you see a horse like that, watch out not to scare it more."
+                korean: "우리 좋아하는 야구팀을 보게 되어 신나니?",
+                english: "Are you excited to see our favorite baseball team?"
+            },
+            {
+                korean: "응! 팬이 정말 많아, 하지만 경기장은 TV에서 본 것보다 더 작아.",
+                english: "Yes, I am! There are so many fans, but the field looks smaller than on TV."
+            },
+            {
+                korean: "맞아. 우리는 우리 좌석에서 홈런을 잡을 수도 있을 거야.",
+                english: "That's right. Maybe we can catch a home run ball from our seats."
+            },
+            {
+                korean: "정말? 정말 멋질 거야!",
+                english: "Really? That'll be great!"
+            },
+            // 3번 지문
+            {
+                korean: "안녕하세요, 피터타운 마을 주민 여러분. 저희 원데이 베이킹 수업을 소개합니다.",
+                english: "Hello, everyone in Petertown Village. Let me introduce our One-Day Baking Class."
+            },
+            {
+                korean: "이번 주 금요일 오후 5시입니다.",
+                english: "It'll be this Friday at 5 p.m."
+            },
+            {
+                korean: "이 수업에서, 여러분은 쿠키 만드는 법을 배울 것입니다.",
+                english: "In this class, you'll learn how to make cookies."
+            },
+            {
+                korean: "수업은 3시간 동안 진행됩니다.",
+                english: "The class will take 3 hours."
+            },
+            {
+                korean: "참가하려면 20달러를 지불해야 합니다.",
+                english: "You need to pay 20 dollars to join."
+            },
+            {
+                korean: "커뮤니티 센터에서 있을 것입니다. 감사합니다.",
+                english: "It'll be at the community center. Thanks."
+            },
+            // 4번 지문
+            {
+                korean: "여보, 우리 딸의 첫 생일 파티가 곧 다가와.",
+                english: "Honey, our daughter's first birthday party is coming soon."
+            },
+            {
+                korean: "당신 말이 맞아. 모두에게 오라고 말했어?",
+                english: "You're right. Did you tell everyone to come?"
+            },
+            {
+                korean: "응. 하지만 아직 사진을 찍어줄 사람을 찾지 못했어.",
+                english: "Yes. But I couldn't find someone to take photos yet."
+            },
+            {
+                korean: "사실, 내 친구 중에 한 명이 사진작가야. 그녀는 정말 잘 해.",
+                english: "Actually, one of my friends is a photographer. She's very good."
+            },
+            {
+                korean: "정말? 그럼, 네 친구에게 전화해줄 수 있어?",
+                english: "Really? Then, can you call your friend?"
+            },
+            {
+                korean: "문제없어.",
+                english: "No problem."
+            },
+            // 5번 지문
+            {
+                korean: "시험이 드디어 끝났어, 크리스틴.",
+                english: "The exam is finally over, Christine."
+            },
+            {
+                korean: "우와! 나 정말 행복해.",
+                english: "Wow! I'm so happy."
+            },
+            {
+                korean: "나도. 정말 뭔가를 하고 싶어. 계획 있어?",
+                english: "Me, too. I really want to do something fun. Do you have any plans?"
+            },
+            {
+                korean: "아니. 아무 계획 없어.",
+                english: "No. I don't have any plans yet."
+            },
+            {
+                korean: "시내 호수에서 보트 타는 건 어때?",
+                english: "How about riding a boat on the lake in town?"
+            },
+            {
+                korean: "좋은 생각이야. 그렇게 하자.",
+                english: "That sounds great. Let's do it."
             }
         ];
 
@@ -315,8 +407,8 @@
             const indices = new Set();
             // 구두점만 있는 단어를 제외하고, 길이가 2 초과인 단어를 우선적으로 블랭크 대상으로 선정
             const eligibleIndices = words.map((word, idx) => ({ word: word.replace(/[.,!?;:\"'/]$/, ''), idx }))
-                                       .filter(item => item.word.length > 2)
-                                       .map(item => item.idx);
+                                         .filter(item => item.word.length > 2 && item.word.toLowerCase() !== 'i' && item.word.toLowerCase() !== 'a') // 'i', 'a'와 같은 짧은 단어 제외
+                                         .map(item => item.idx);
             
             // 가능한 블랭크할 단어가 numBlanks보다 적으면, 구두점만 있는 단어를 제외한 모든 단어에서 선택
             if (eligibleIndices.length < numBlanks) {
@@ -513,9 +605,9 @@
                         correctTokenIndex++;
                         foundMatch = true;
                     } else if (userToken.match(/^[.,!?;:\"'/]$/) && userToken === correctToken) { // 사용자 입력이 구두점이고, 정답도 동일 구두점
-                         resultHtml += `<span class="correct-word">${userToken}</span> `;
-                         correctTokenIndex++;
-                         foundMatch = true;
+                           resultHtml += `<span class="correct-word">${userToken}</span> `;
+                           correctTokenIndex++;
+                           foundMatch = true;
                     } else { // 불일치하는 경우
                         // 사용자가 틀린 단어 (정답 단어와 비교)
                         resultHtml += `<span class="wrong-word">${userToken}</span> `;
